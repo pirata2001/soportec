@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportar Problema en PC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #mensaje {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Reportar Problema en tu PC</h1>
+        <form id="problemaForm" onsubmit="enviarWhatsApp(event)">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="problema">Describe tu problema:</label>
+            <textarea id="problema" name="problema" rows="5" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div id="mensaje"></div>
+    </div>
+
+    <script>
+        function enviarWhatsApp(event) {
+            event.preventDefault(); // Evita que el formulario se envíe de la manera tradicional
+
+            // Obtén los valores del formulario
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const problema = document.getElementById('problema').value;
+
+            // Construye el mensaje
+            const mensaje = `Hola, mi nombre es ${nombre} (${email}). Tengo el siguiente problema con mi PC: ${problema}`;
+
+            // Codifica el mensaje para que sea válido en una URL
+            const mensajeCodificado = encodeURIComponent(mensaje);
+
+            // Número de teléfono (reemplaza con tu número en formato internacional, sin "+")
+            const telefono = "584244265044"; // Ejemplo: +52 123 456 7890
+
+            // Construye la URL de WhatsApp
+            const urlWhatsApp = `https://wa.me/${telefono}?text=${mensajeCodificado}`;
+
+            // Abre WhatsApp en una nueva pestaña
+            window.open(urlWhatsApp, '_blank');
+
+            // Muestra un mensaje de confirmación
+            document.getElementById('mensaje').textContent = 'Redirigiendo a WhatsApp...';
+        }
+    </script>
+</body>
+</html>

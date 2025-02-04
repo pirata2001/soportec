@@ -20,23 +20,41 @@
       }
 
       .button {
-  display: block;
-  width: 100%;
-  max-width: 300px;
-  margin: 20px auto;
-  padding: 15px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1.1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: 20px auto;
+        padding: 15px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
 
-.button:hover {
-  background-color: #0056b3;
-}
+      .button:hover {
+        background-color: #0056b3;
+      }
+
+      .button-back {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: auto;
+        max-width: none;
+        margin: 0;
+        background: none;
+        border: none;
+        color: #007BFF;
+        font-size: 1.5em;
+        cursor: pointer;
+      }
+
+      .button-back:hover {
+        color: #0056b3;
+      }
   
       /* Contenedor principal */
       .container {
@@ -90,6 +108,11 @@
   </head>
   
 <body>
+  <!-- Nuevo botón "Atrás" con ícono de FontAwesome -->
+  <button class="button-back" onclick="window.history.back();">
+    <i class="fas fa-arrow-left"></i> Atrás
+  </button>
+
   <div class="container">
     <h1>Configura tu Router</h1>
     <p>Sigue estos pasos para acceder a la configuración de tu router:</p>
@@ -114,7 +137,6 @@
         <i class="fab fa-whatsapp"></i>
       </div>
     </a>
-    
     
   </div>
 
