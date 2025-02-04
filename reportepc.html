@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reportar Problema en PC</title>
+    <!-- Incluir FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,6 +25,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 400px;
+            position: relative; /* Para posicionar el botón "Atrás" */
         }
 
         h1 {
@@ -56,6 +59,7 @@
             border-radius: 4px;
             font-size: 16px;
             cursor: pointer;
+            margin-bottom: 10px; /* Espacio entre botones */
         }
 
         button:hover {
@@ -68,10 +72,35 @@
             font-size: 16px;
             color: #333;
         }
+
+        .btn-atras {
+            background-color: #6c757d; /* Color gris para el botón "Atrás" */
+            position: absolute; /* Posicionamiento absoluto */
+            top: 10px; /* Distancia desde la parte superior */
+            left: 10px; /* Distancia desde la izquierda */
+            width: auto; /* Ancho automático (no ocupa el 100%) */
+            padding: 8px 16px; /* Ajuste de padding */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-atras:hover {
+            background-color: #5a6268; /* Color gris más oscuro al pasar el mouse */
+        }
+
+        .btn-atras i {
+            margin-right: 5px; /* Espacio entre el ícono y el texto (si lo hubiera) */
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Botón "Atrás" con ícono de FontAwesome -->
+        <button class="btn-atras" onclick="window.history.back()">
+            <i class="fas fa-arrow-left"></i> <!-- Ícono de flecha hacia la izquierda -->
+        </button>
+
         <h1>Reportar Problema en tu PC</h1>
         <form id="problemaForm" onsubmit="enviarWhatsApp(event)">
             <label for="nombre">Nombre:</label>
