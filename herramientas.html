@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Página con iconos de FontAwesome y modo oscuro">
+  <meta name="description" content="Página de herramientas">
   <meta name="author" content="Tu Nombre">
-  <title>Rayner_TEC</title>
+  <title>Herramientas - Rayner_TEC</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- FontAwesome -->
@@ -49,6 +49,22 @@
     .main-content {
       padding: 20px;
     }
+    .button-back {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: auto;
+      max-width: none;
+      margin: 0;
+      background: none;
+      border: none;
+      color: #007BFF;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+    .button-back:hover {
+      color: #0056b3;
+    }
     @media (max-width: 768px) {
       .icon-button {
         padding: 15px;
@@ -64,26 +80,31 @@
 </head>
 <body>
 
+  <!-- Botón "Volver" con ícono de FontAwesome -->
+  <button class="button-back" onclick="window.history.back();">
+    <i class="fas fa-arrow-left"></i> Volver
+  </button>
+
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Rayner_TEC</a>
+      <a class="navbar-brand" href="index.html">Rayner_TEC</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+            <a class="nav-link" href="index.html">Inicio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="servicios.html">Servicios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="herramientas.html">Herramientas</a>
+            <a class="nav-link active" aria-current="page" href="herramientas.html">Herramientas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://wa.me/584244265044" target="_blank">Contacto</a>
+            <a class="nav-link" href="#">Contacto</a>
           </li>
         </ul>
       </div>
@@ -93,28 +114,53 @@
   <!-- Contenido Principal -->
   <div class="main-content">
     <div class="container">
+      <h1 class="text-center mb-4">Herramientas</h1>
       <div class="row">
-        <!-- Botón de Servicios -->
+        <!-- Herramienta 1 -->
         <div class="col-12 col-md-4">
-          <a href="servicios.html" class="icon-button">
-            <i class="fas fa-laptop-code"></i> <!-- Icono de FontAwesome -->
-            <span>Servicios</span>
+          <a href="acceder_router.html" class="icon-button">
+            <i class="fa-solid fa-wifi"></i><!-- Icono de FontAwesome -->
+            <span>Configuración de Router</span>
           </a>
         </div>
 
-        <!-- Botón de Herramientas -->
-        <div class="col-12 col-md-4">
-          <a href="herramientas.html" class="icon-button">
-            <i class="fas fa-tools"></i> <!-- Icono de FontAwesome -->
-            <span>Herramientas</span>
-          </a>
-        </div>
-
-        <!-- Botón de Sección Vacía -->
+        <!-- Herramienta 2 -->
         <div class="col-12 col-md-4">
           <a href="#" class="icon-button">
-            <i class="fas fa-box-open"></i> <!-- Icono de FontAwesome -->
-            <span>Sección Vacía</span>
+            <i class="fas fa-shield-alt"></i> <!-- Icono de FontAwesome -->
+            <span>Seguridad</span>
+          </a>
+        </div>
+
+        <!-- Herramienta 3 -->
+        <div class="col-12 col-md-4">
+          <a href="#" class="icon-button">
+            <i class="fas fa-tachometer-alt"></i> <!-- Icono de FontAwesome -->
+            <span>Optimización</span>
+          </a>
+        </div>
+
+        <!-- Herramienta 4 -->
+        <div class="col-12 col-md-4">
+          <a href="#" class="icon-button">
+            <i class="fas fa-database"></i> <!-- Icono de FontAwesome -->
+            <span>Backup</span>
+          </a>
+        </div>
+
+        <!-- Herramienta 5 -->
+        <div class="col-12 col-md-4">
+          <a href="#" class="icon-button">
+            <i class="fas fa-code"></i> <!-- Icono de FontAwesome -->
+            <span>Desarrollo</span>
+          </a>
+        </div>
+
+        <!-- Herramienta 6 -->
+        <div class="col-12 col-md-4">
+          <a href="#" class="icon-button">
+            <i class="fas fa-cloud"></i> <!-- Icono de FontAwesome -->
+            <span>Cloud</span>
           </a>
         </div>
       </div>
